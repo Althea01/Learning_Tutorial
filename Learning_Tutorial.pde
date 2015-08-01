@@ -1,11 +1,18 @@
 //Tutorial for Processing
 //between every /* and */ is a program that can run by itself
 
+
+
+
+
 /*
 //Canvas
 //size(x,y); x determines the x-axis and y determines the y-axis;
 size(800,600);
 */
+
+
+
 
 
 /*
@@ -14,6 +21,10 @@ size(800,600);
 size(640,480);
 point(240,60);
 */
+
+
+
+
 
 /*
 //Simple graphics
@@ -41,6 +52,10 @@ arc(500,400,50,50,1,2);
 arc(500,400,50,50,radians(45),radians(90));
 */
 
+
+
+
+
 /*
 //Smooth
 size(640,480);
@@ -50,6 +65,10 @@ ellipse(320,240,80,80);
 noSmooth();
 ellipse(320,240,100,100);
 */
+
+
+
+
 
 /*
 //StrokeWeight
@@ -63,6 +82,10 @@ ellipse(275,60,90,90);
 strokeWeight(12);
 ellipse(375,60,90,90);
 */
+
+
+
+
 
 /*
 //Shape of joint lines
@@ -81,6 +104,10 @@ strokeCap(ROUND);
 line(350,25,420,95);
 */
 
+
+
+
+
 /*
 //GreyScale
 size(480,120);
@@ -95,6 +122,10 @@ fill(102);
 ellipse(268,118,200,200);
 */
 
+
+
+
+
 /*
 //noStroke && noFill
 size(480,120);
@@ -106,6 +137,10 @@ ellipse(228,-16,200,200);
 noStroke();
 ellipse(268,118,200,200);
 */
+
+
+
+
 
 /*
 //RGB color Mode
@@ -123,6 +158,10 @@ ellipse(228,-16,200,200);
 fill(0,0,255,150);
 ellipse(268,118,200,200);
 */
+
+
+
+
 
 /*
 //Self-designed shapes
@@ -150,6 +189,10 @@ vertex(226,109+120);
 endShape(CLOSE);
 */
 
+
+
+
+
 /*
 //Variables
 size(480,120);
@@ -163,6 +206,10 @@ ellipse(175,y,d,d);
 ellipse(275,y,d,d);
 */
 
+
+
+
+
 /*
 //width && height
 size(480,120);
@@ -171,6 +218,10 @@ line(0,0,width,height);
 line(width,0,0,height);
 ellipse(width/2,height/2,60,60);
 */
+
+
+
+
 
 /*
 //for loop
@@ -185,6 +236,10 @@ for(int i=20; i<400; i+=60){
 }
 */
 
+
+
+
+
 /*
 size(480,120);
 background(0);
@@ -198,6 +253,10 @@ for(int y = 0; y<= height; y += 40){
 }
 */
 
+
+
+
+
 /*
 //draw() && setup()
 //Whatever code in void draw() will be repeated endlessly
@@ -209,5 +268,281 @@ void draw(){
 */
 
 
-//
 
+
+
+/*
+//Tracing
+//mouseX means the x position of mouse and mouseY means the y position of mouse
+void setup(){
+ size(480,120);
+fill(0,102);
+smooth();
+noStroke();
+}
+
+void draw(){
+ background(255);
+ //You can choose to add the above line or not, but the effect will be different
+ ellipse(mouseX,mouseY,9,9); 
+}
+*/
+
+
+
+
+
+/*
+//pmouseX & pmouseY
+//These two commands help connect points that are discontinuous, since pmouseX & pmouseY stores the value of the previous mouseX & mouseY value
+void setup(){
+  size(480,120);
+  strokeWeight(4);
+  smooth();
+  stroke(0,102);
+}
+
+void draw(){
+  line(mouseX,mouseY,pmouseX,pmouseY);
+}
+*/
+
+
+
+
+
+/*
+//dist()
+//dist(x1,y1,x2,y2) calculates the distance between the two points
+void setup(){
+  size(480,120);
+  smooth();
+  stroke(0,102);
+}
+
+void draw(){
+  float weight = dist(mouseX,mouseY,pmouseX,pmouseY);
+  strokeWeight(weight);
+  line(mouseX,mouseY,pmouseX,pmouseY);
+}
+*/
+
+
+
+
+
+/*
+//easing
+//This makes the point follow the mouse but from a distance
+float x;
+float easing = 0.01;
+float diameter = 12;
+
+void setup(){
+  size(480,120);
+  smooth();
+}
+
+void draw(){
+  float targetX = mouseX;
+  x+=(targetX - x)*easing;
+  ellipse(x,40,12,12);
+  println(targetX + ":" + x);
+}
+*/
+
+
+
+
+
+/*
+//map()
+//map(value,x1,y1,x2,y2);
+//if you want to change the value of one number in range 1 into another number in range 2, then x1,y1 are the min and max of range 1 and x2,y2 are the min and max of range 2
+void setup(){
+  size(480,120);
+  strokeWeight(12);
+  smooth();
+}
+
+void draw(){
+  background(204);
+  stroke(255);
+  line(120,60,mouseX,mouseY);
+  stroke(0);
+  float mx = map(mouseX,0,width,60,180);
+  line(120,60,mx,mouseY);
+}
+*/
+
+
+
+
+
+/*
+//mousePressed
+//mousePressed checks if the mouse has been pressed (similar to keyPressed)
+void setup(){
+  size(240,120);
+  smooth();
+  strokeWeight(30);
+}
+
+void draw(){
+  background(204);
+  stroke(102);
+  line(40,0,70,height);
+  if (mousePressed == true){
+  //booleans can be written in the form "if (mousePressed){" because booleans shall be either true or false
+    stroke(0);
+  }
+  line(0,70,width,50);
+}
+*/
+
+
+
+
+
+/*
+//if & else
+void setup(){
+  size(240,120);
+  smooth();
+  strokeWeight(30);
+}
+
+void draw(){
+  background(204);
+  stroke(102);
+  line(40,0,70,height);
+  if (mousePressed){
+    stroke(0);
+  } else {
+    stroke(255);
+  }
+  line(0,70,width,50);
+}
+*/
+
+
+
+
+
+/*
+//mouseButton
+//mouseButton keeps track of which part of the mouse is clicked
+void setup(){
+  size(120,120);
+  smooth();
+  strokeWeight(30);
+}
+
+void draw(){
+  background(204);
+  stroke(102);
+  line(40,0,70,height);
+  if (mousePressed){
+    if (mouseButton == LEFT){
+      stroke(255);
+    } else {
+      stroke(0);
+    }
+    line(0,70,width,50);
+  }
+}
+*/
+
+
+
+
+
+/*
+//find the mouse
+float x;
+int offset = 10;
+
+void setup(){
+  size(240,120);
+  smooth();
+  x = width/2;
+}
+
+void draw(){
+  background(204);
+  if (mouseX > x){
+    x += 0.5;
+    offset = -10;
+  }
+  if (mouseX < x){
+    x -= 0.5;
+    offset = 10;
+  }
+  line(x,0,x,height);
+  line(mouseX,mouseY,mouseX + offset,mouseY - 10);
+  line(mouseX,mouseY,mouseX + offset,mouseY + 10);
+  line(mouseX,mouseY,mouseX + offset*3,mouseY);
+}
+*/
+
+
+
+
+
+/*
+//see if mouse is in a circle
+int x = 120;
+int y = 60;
+int radius = 12;
+
+void setup(){
+  size(240,120);
+  smooth();
+  ellipseMode(RADIUS);
+}
+
+void draw(){
+  background(204);
+  float d = dist(mouseX,mouseY,x,y);
+  if (d < radius){
+    radius ++;
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(x,y,radius,radius);
+}
+*/
+
+
+
+
+
+/*
+//see if mouse is in a rectangle
+int x = 80;
+int y = 30;
+int w = 80;
+int h = 60;
+
+void setup(){
+  size(240,120);
+}
+
+void draw(){
+  background(204);
+  if ((mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
+    fill(0);
+  } else {
+    fill(255);
+  }
+  rect(x,y,w,h);
+}
+*/
+
+
+
+
+
+
+//keys
