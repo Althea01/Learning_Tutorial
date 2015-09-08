@@ -837,8 +837,8 @@ void draw(){
 
 
 
-
-//Move left and right
+/*
+// Move left and right
 int radius = 40;
 float x = 110;
 float speed = 0.5;
@@ -862,3 +862,46 @@ void draw(){
     arc(x, 60, radius, radius, 3.67, 8.9);
   }
 }
+*/
+
+
+
+
+
+/*
+// random number
+void draw(){
+  // random(x, y) sets the range for the number that appears
+  float r = random(0, mouseX);
+  println(r);
+}
+*/
+
+
+
+
+
+/*
+// random drawing
+void setup(){
+  size(240,120);
+  smooth();
+}
+
+void draw(){
+  background(204);
+  for (int x = 20; x < width; x += 20){
+    float mx = mouseX / 10;
+    float offsetA = random(-mx, mx);
+    float offsetB = random(-mx, mx);
+    line(x + offsetA, 20, x - offsetB, 100);
+  }
+}
+*/
+
+
+
+
+
+
+
