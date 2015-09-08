@@ -686,18 +686,22 @@ void draw(){
 
 
 /*
-//Now let's try some gifs
+// Now let's try some gifs
 PImage img;
+// or PShape network;
 
 void setup(){
   size(480,120);
   img=loadImage("clouds.gif");
+  // network=loadShape("clouds.svg");
 }
 
 void draw(){
   background(255);
   image(img,0,0);
   image(img,0,mouseY * -1);
+  // shape(network,0,0);
+  // image(network,0,mouseY * -1);
 }
 */
 
@@ -705,7 +709,7 @@ void draw(){
 
 
 
-
+/*
 //Using text
 //Before you try out any font, you should first click "Create Font from Tools" 
 PFont font;
@@ -728,4 +732,35 @@ void draw(){
   text("I am so colorful",25,60);
   textSize(18);
   text("I am so colorful",27,90);
+}
+*/
+
+
+
+
+
+
+// String
+// String variable declares texts
+PFont font;
+String quote="I am so colorful";
+
+void setup(){
+  size(480,120);
+  smooth();
+  font=loadFont("AdobeFanHeitiStd-Bold-48.vlw");
+  textFont(font);
+}
+
+void draw(){
+  background(102);
+  if (keyPressed){
+    fill(random(255),random(255),random(255));
+  } else {
+    fill(255);
+  }
+  textSize(36);
+  text(quote,25,60);
+  textSize(18);
+  text(quote,27,90);
 }
