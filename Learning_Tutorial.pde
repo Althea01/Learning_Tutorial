@@ -739,7 +739,7 @@ void draw(){
 
 
 
-
+/*
 // String
 // String variable declares texts
 PFont font;
@@ -764,3 +764,22 @@ void draw(){
   textSize(18);
   text(quote,27,90);
 }
+*/
+
+
+
+
+
+/*
+//Movement
+void setup(){
+  // See for yourself the effect of the different framerates have on the movement of animations
+  frameRate(30);
+  //  frameRate(12);
+  //  frameRate(5);
+  //  frameRate(0.5);
+void draw(){
+  // Note that if you use "print", the results printed in the console will be on the same line
+  println(frameRate);
+}
+*/
