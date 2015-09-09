@@ -1218,7 +1218,7 @@ void rollDice(int numSides){
 
 
 
-
+/*
 // how to draw ... for example, two owls with a function?
 void setup(){
   size(480,120);
@@ -1247,4 +1247,22 @@ void owl(int x, int y){
   ellipse(14, -65, 8, 8);
   quad(0, -58, 4, -51, 0, -44, -4, -51);
   popMatrix();
+}
+*/
+
+
+
+
+
+
+//return values
+void setup(){
+  float yourWeight = 132;
+  float marsWeight = calculateMars(yourWeight);
+  println(marsWeight);
+}
+
+float calculateMars(float w){
+  float newWeight = w * 0.38;
+  return newWeight;
 }
