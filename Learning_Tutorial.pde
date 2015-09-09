@@ -1193,10 +1193,22 @@ void draw(){
     angleDirection *= -1;
   }
 }
+*/
 
 
 
 
 
+// functions are useful as you pack up actions in a single function and can call the function every time you use it
+void setup(){
+  println("Ready to roll!");
+  rollDice(20);
+  rollDice(20);
+  rollDice(6);
+  println("Finished.");
+}
 
-//
+void rollDice(int numSides){
+  int d = 1 + int(random(numSides));
+  println("Rolling..." + d);
+}
