@@ -1254,8 +1254,8 @@ void owl(int x, int y){
 
 
 
-
-//return values
+/*
+// return values
 void setup(){
   float yourWeight = 132;
   float marsWeight = calculateMars(yourWeight);
@@ -1266,3 +1266,37 @@ float calculateMars(float w){
   float newWeight = w * 0.38;
   return newWeight;
 }
+*/
+
+
+
+
+
+
+// objects
+// First we create a class called JitterBug and declare some value of it.
+class JitterBug{
+  float x;
+  float y;
+  int diameter;
+  float speed = 0.5;
+  
+  // now we can add functions to the class
+ Jitterbug(float tempX, float tempY, int tempDiameter){
+   x = tempX;
+   y = tempY;
+   diameter = tempDiameter;
+ }
+ 
+ void move(){
+   x += random(-speed, speed);
+   y += random(-speed, speed);
+ }
+ 
+ void display(){
+   ellipse(x, y, diameter, diameter);
+ }
+
+   
+}
+
