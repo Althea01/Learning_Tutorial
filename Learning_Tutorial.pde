@@ -1055,5 +1055,81 @@ void draw(){
 
 
 
+/*
+// a little more complex
+// translate() moves the axis
+void setup(){
+  size(120,120);
+}
 
-//
+void draw(){
+  translate(mouseX, mouseY);
+  rect(0,0,30,30);
+  translate(35,10);
+  rect(0,0,15,15);
+}
+*/
+
+
+
+
+
+/*
+// popMatrix() & pushMatrix()
+// pushMatrix() memorizes the current positions
+void setup(){
+  size(120,120);
+}
+
+void draw(){
+  pushMatrix();
+  translate(mouseX, mouseY);
+  rect(0,0,30,30);
+  // in this case, since popMatrix() is used, the effect of pushMatrix() is cancelled so the smaller rect is always on the top left
+  popMatrix();
+  translate(35,10);
+  rect(0,0,15,15);
+}
+*/
+
+
+
+
+
+/*
+// rotation
+float angle = 0.0;
+
+void setup(){
+  size(120,120);
+  smooth();
+}
+
+void draw(){
+  translate(mouseX, mouseY);
+  rotate(angle);
+  rect(-15,-15,30,30);
+  angle += 0.1;
+}
+*/
+
+
+
+
+
+/*
+// let's change a way of rotation to better see the effect of translate()
+float angle = 0.0;
+
+void setup(){
+  size(120,120);
+  smooth();
+}
+
+void draw(){
+  rotate(angle);
+  translate(mouseX, mouseY);
+  rect(-15,-15,30,30);
+  angle += 0.1;
+}
+*/
