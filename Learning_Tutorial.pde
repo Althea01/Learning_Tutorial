@@ -1278,14 +1278,18 @@ float calculateMars(float w){
 
 //create an object
 JitterBug bug;
+JitterBug jit;
 
 void setup(){
   size(480,120);
   smooth();
-  bug = new JitterBug(width/2, height/2, 20);
+  jit = new JitterBug(width * 0.33, height/2, 50);  
+  bug = new JitterBug(width * 0.66, height/2, 10);
 }
 
 void draw(){
+  jit.move();
+  bug.display();
   bug.move();
   bug.display();
 }
@@ -1315,3 +1319,8 @@ class JitterBug{
 }
 
 
+
+
+
+
+//
