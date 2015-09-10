@@ -1469,7 +1469,7 @@ void draw(){
 
 
 
-
+/*
 // light effects
 void setup(){
   size(420, 220, P3D);
@@ -1501,4 +1501,13 @@ void draw(){
     }
   }
 }
+*/
+
+
+
+
+
+
+// how to save frame
+saveFrame("frames/SaveExample-####.pdf");
 
