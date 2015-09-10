@@ -1275,6 +1275,22 @@ float calculateMars(float w){
 
 // objects
 // First we create a class called JitterBug and declare some value of it.
+
+//create an object
+JitterBug bug;
+
+void setup(){
+  size(480,120);
+  smooth();
+  bug = new JitterBug(width/2, height/2, 20);
+}
+
+void draw(){
+  bug.move();
+  bug.display();
+}
+
+
 class JitterBug{
   float x;
   float y;
@@ -1296,7 +1312,6 @@ class JitterBug{
  void display(){
    ellipse(x, y, diameter, diameter);
  }
-
-   
 }
+
 
