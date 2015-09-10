@@ -1507,7 +1507,10 @@ void draw(){
 
 
 
-
+/*
 // how to save frame
+import processing.pdf.*;
+
 saveFrame("frames/SaveExample-####.pdf");
+*/
 
