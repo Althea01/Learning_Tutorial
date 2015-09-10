@@ -1407,7 +1407,7 @@ void draw(){
 
 
 
-
+/*
 // how to add in a series of images
 int numFrames = 12; // number of frames
 PImage[] images = new PImage [numFrames];
@@ -1430,5 +1430,36 @@ void draw(){
   currentFrame ++; // go to the next frame
   if (currentFrame >= images.length){
     currentFrame = 1; // start back from the first frame
+  }
+}
+*/
+
+
+
+
+
+
+// 3D Processing
+void setup(){
+  size(440, 220, P3D);
+  noStroke();
+  fill(255, 190);
+}
+
+void draw(){
+  background(0);
+  translate(width/2, height/2, 0);
+  rotateX(mouseX / 200.0);
+  rotateY(mouseY / 200.0);
+  int dim = 18;
+  for (int i = - height/2; i < height/2; i += dim * 1.2) {
+    for (int j = -height/2; j < height/2; j += dim * 1.2){
+      beginShape();
+      vertex(i, j, 0);
+      vertex(i+dim, j, 0);
+      vertex(i+dim, j+dim, -dim);
+      vertex(i, j+dim, -dim);
+      endShape();
+    }
   }
 }
