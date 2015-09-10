@@ -1289,7 +1289,7 @@ void setup(){
 
 void draw(){
   jit.move();
-  bug.display();
+  jit.display();
   bug.move();
   bug.display();
 }
@@ -1302,7 +1302,7 @@ class JitterBug{
   float speed = 0.5;
   
   // now we can add functions to the class
- Jitterbug(float tempX, float tempY, int tempDiameter){
+ JitterBug(float tempX, float tempY, int tempDiameter){
    x = tempX;
    y = tempY;
    diameter = tempDiameter;
