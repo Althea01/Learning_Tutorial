@@ -1347,3 +1347,26 @@ void draw(){
   }
 }
 */
+
+
+
+
+
+
+// a way to assign multiples values with a single line of code
+float[] x = {-20, 20};
+
+void setup(){
+  size(240,120);
+  smooth();
+  noStroke();
+}
+
+void draw(){
+  background(0);
+  x[0] += 0.5;
+  x[1] += 0.5;
+  arc(x[0], 30, 40, 40, 0.52, 5.76);
+  arc(x[1], 90, 40, 40, 0.52, 5.76);
+}
+
