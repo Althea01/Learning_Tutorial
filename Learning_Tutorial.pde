@@ -1352,7 +1352,7 @@ void draw(){
 
 
 
-
+/*
 // a way to assign multiples values with a single line of code
 float[] x = {-20, 20};
 
@@ -1369,4 +1369,35 @@ void draw(){
   arc(x[0], 30, 40, 40, 0.52, 5.76);
   arc(x[1], 90, 40, 40, 0.52, 5.76);
 }
+*/
 
+
+
+
+
+
+// follow the mouse
+int num = 60;
+int[] x = new int[num];
+int[] y = new int[num];
+
+void setup(){
+  size(240,120);
+  smooth();
+  noStroke();
+}
+
+void draw(){
+  background(0);
+  // Copy array values from back to front
+  for (int i=x.length-1; i>0; i--){
+    x[i] = x[i-1];
+    y[1] = y[i-1];
+  }
+  x[0] = mouseX;
+  y[0] = mouseY;
+  for (int i=0; i<x.length; i++){
+    fill(i * 4);
+    ellipse(x[i]+30, y[i]+30, 40, 40);
+  }
+}
