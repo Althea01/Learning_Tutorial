@@ -1438,7 +1438,7 @@ void draw(){
 
 
 
-
+/*
 // 3D Processing
 void setup(){
   size(440, 220, P3D);
@@ -1463,3 +1463,42 @@ void draw(){
     }
   }
 }
+*/
+
+
+
+
+
+
+// light effects
+void setup(){
+  size(420, 220, P3D);
+  noStroke();
+  fill(255);
+}
+
+void draw(){
+  lights();
+  
+  // try out the different kinds of lights
+//  ambientLight(102, 102, 102);
+  directionalLight(255, 255, 255, // controls the color of light
+                   -1, 0, 0); // controls the direction of light
+  // There are also pointLight & spotLight that you can try for yourself
+
+//  rotateY(PI/24);
+  rotateX(mouseX/200.0);
+  rotateY(mouseY/100.0);
+  background(0);
+  translate(width/2, height/2, -20);
+  int dim = 18;
+  for (int i = - height/2; i < height/2; i += dim * 1.2) {
+    for (int j = -height/2; j < height/2; j += dim * 1.2){
+      pushMatrix();
+      translate(i, j, -j);
+      box(dim, dim, dim);
+      popMatrix();
+    }
+  }
+}
+
