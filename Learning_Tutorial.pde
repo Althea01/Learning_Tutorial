@@ -1375,7 +1375,7 @@ void draw(){
 
 
 
-
+/*
 // follow the mouse
 int num = 60;
 int[] x = new int[num];
@@ -1399,5 +1399,36 @@ void draw(){
   for (int i=0; i<x.length; i++){
     fill(i * 4);
     ellipse(x[i]+30, y[i]+30, 40, 40);
+  }
+}
+*/
+
+
+
+
+
+
+// how to add in a series of images
+int numFrames = 12; // number of frames
+PImage[] images = new PImage [numFrames];
+int currentFrame = 1;
+
+void setup(){
+  size(240,120);
+  for (int i=1; i<images.length; i++){
+    // nf function is used to generate numbers
+    // nf(x, y); x means the last numbers, y means the number of positions and if there isn't a number, there shall be a zero
+    // e.g. nf(1,4) means 0001 while nf(11,4) means 0011
+    String imageName = "frame-" + nf(i, 4) + ".png";
+    images[i] = loadImage(imageName);
+  }
+  frameRate(24);
+}
+
+void draw(){
+  image(images[currentFrame], 0, 0);
+  currentFrame ++; // go to the next frame
+  if (currentFrame >= images.length){
+    currentFrame = 1; // start back from the first frame
   }
 }
