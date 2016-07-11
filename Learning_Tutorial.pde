@@ -1323,7 +1323,7 @@ class JitterBug{
 
 
 
-/*
+
 // Array list
 // This helps to create large number of repetitive units
 float [] x = new float [3000]; // This creates 3000 units for x
@@ -1346,7 +1346,7 @@ void draw(){
     arc(x[i], y, 12, 12, 0.52, 5.76);
   }
 }
-*/
+
 
 
 
